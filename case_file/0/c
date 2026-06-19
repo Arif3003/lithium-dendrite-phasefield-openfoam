@@ -1,0 +1,97 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5                                     |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      c;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 0 0 0 0 0 0];
+
+internalField   uniform 0;
+
+boundaryField
+{
+    floor
+    {
+        type            zeroGradient;
+    }
+    boxtoCell
+    {
+        type            fixedValue;
+        value           uniform 0;
+    }
+
+    ceiling
+    {
+        type            zeroGradient;
+    }
+    electrode
+    {
+        type            fixedValue;
+        value           uniform 0;
+    }
+    electrolyte
+    {
+        type            fixedValue;
+        value           uniform 1;       
+    }
+}
+
+// ************************************************************************* //
+
+//============== NO-FLUX BOUNDARY CONDITIONS ====================//
+
+// boundaryField
+// {
+//     floor
+//     {
+//         type            zeroGradient;
+//         //value         uniform 0;
+//     }
+//     ceiling
+//     {
+//         type            zeroGradient;
+//         //value         uniform 0;
+//     }
+//     sideSolid
+//     {
+//         type            zeroGradient;
+//         //value         uniform 0;
+//     }
+// 
+// }
+
+//============== CYCLIC BOUNDARY CONDITIONS ====================//
+
+// // boundaryField
+// // {
+// //     top
+// //     {
+// //         type            cyclic;
+// //     }
+// //     bottom
+// //     {
+// //         type            cyclic;
+// //     }
+// //     left
+// //     {
+// //         type            cyclic;
+// //     }
+// //     right
+// //     {
+// //         type            cyclic;
+// //     }
+// //     frontAndBack
+// //     {
+// //         type            empty;
+// //     }
+// // }
