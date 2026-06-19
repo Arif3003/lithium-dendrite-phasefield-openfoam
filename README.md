@@ -1,0 +1,1 @@
+# lithium-dendrite-phasefield-openfoam
